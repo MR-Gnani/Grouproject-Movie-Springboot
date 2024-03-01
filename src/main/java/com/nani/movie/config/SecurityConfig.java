@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		// 인증되지 않은 사용자 login페이지로 이동시킬 예정
 		http.authorizeRequests()
-			.antMatchers("/", "/main/**", "/user/**").authenticated()
+			.antMatchers("/", "/main/**", "/user/**", "/api/**").authenticated()
 			.anyRequest().permitAll()
 			.and()
 			.formLogin()

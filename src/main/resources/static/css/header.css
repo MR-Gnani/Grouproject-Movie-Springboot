@@ -28,7 +28,9 @@
 .logo {
   display: flex;
   align-items: center;
-  font-size: 50px;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: oblique;
 }
 
 .logo span{
@@ -45,7 +47,7 @@
   display: flex;
 }
 .navi > .navi-list .navi-item a i {
-  font-size: 30px;
+  font-size: 32px;
   color: white;
   margin-top: 4px;
   cursor: pointer;

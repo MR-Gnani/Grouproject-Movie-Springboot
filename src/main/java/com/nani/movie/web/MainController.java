@@ -11,4 +11,9 @@ public class MainController {
 		return "main/main";
 	}
 	
+	@GetMapping("/main/detail")
+	public String detailPage() {
+		return "main/detail";
+	}
+	
 }

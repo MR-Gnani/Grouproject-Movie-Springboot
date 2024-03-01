@@ -21,7 +21,7 @@
                 
                    <!--회원가입 폼-->
                    <div class="login__form">
-                        <h1>TO DO LIST</h1>
+                        <h1> NOONING </h1>
                         
                     <!--회원가입 인풋-->
                         <form class="login__input" action="/auth/signup" method="post">

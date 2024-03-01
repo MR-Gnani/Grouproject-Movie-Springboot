@@ -2,6 +2,7 @@ package com.nani.movie.web;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class AuthController {
 	
+	@Autowired
 	private final AuthService authService;
 
 	// 1. 로그인 페이지

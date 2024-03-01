@@ -16,5 +16,9 @@ public class UserController {
 		// 세션은 헤더에 시큐리티 태그라이브러리를 사용하여 전달 예정
 		return "user/profile";
 	}
-
+	
+	@GetMapping("/user/{id}/update")
+	public String update(@PathVariable int id, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		return "/user/update";
+	}
 }
