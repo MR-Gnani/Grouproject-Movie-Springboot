@@ -2,8 +2,10 @@ const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get("movieId");
 let movies = [];
 let baseUrl = new URL(`https://api.themoviedb.org/3/movie`);
+let likeInfo = $('#likeInfo').val();
 
-(() => {
+console.log(likeInfo);
+/* (() => {
   const wrapEl = document.querySelector(".deepWrap");
   const FULL_HEART = '<i class="fa-solid fa-heart full_heart"></i>';
   const EMPTY_HEART = '<i class="fa-regular fa-heart empty_heart"></i>';
@@ -18,7 +20,47 @@ let baseUrl = new URL(`https://api.themoviedb.org/3/movie`);
     }
   };
   wrapEl.addEventListener("click", heartHandler);
-})();
+})(); */
+
+// 찜 목록 등록
+function toggleLike(movieId) {
+	console.log(movieId);
+	let likeIcon = $(`#likeIcon-${movieId}`);
+	
+	if (likeIcon.hasClass("fa-regular")) { //좋아요가 안된 상태, 좋아요 누르겠다.
+		
+		$.ajax({
+			type: "post",
+			url: `/api/detail/${movieId}/likes`,
+			dataType: "json"
+		}).done(res=>{
+			
+			likeIcon.removeClass("fa-regular");
+			likeIcon.removeClass("empty_heart");
+			likeIcon.addClass("fa-solid");
+			likeIcon.addClass("full_heart");
+
+		}).fail(error=>{
+			console.log("오류", error);
+		});
+
+	} else { //좋아요가 된 상태, 좋아요 취소하겠다.
+		$.ajax({
+			type: "delete",
+			url: `/api/detail/${movieId}/likes`,
+			dataType: "json"
+		}).done(res=>{
+				
+			likeIcon.removeClass("fa-solid");
+			likeIcon.removeClass("full_heart");
+			likeIcon.addClass("fa-regular");
+			likeIcon.addClass("empty_heart");
+			
+		}).fail(error=>{
+			console.log("오류", error);
+		});	
+	}
+}
 
 const detailRender = async (movieId) => {
   // console.log(movieId);
@@ -58,7 +100,7 @@ const detailRender = async (movieId) => {
     );
     console.log(data);
     movies = data;
-    const detailHTML = `
+    let detailHTML = `
           <div class="moiveImg">
             <img
               src="https://image.tmdb.org/t/p/original${movies.backdrop_path}"
@@ -72,9 +114,15 @@ const detailRender = async (movieId) => {
                 <p id="movie-v"><i class="fa-solid fa-star"></i>${movies.vote_average.toFixed(
                   1
                 )}</p>
-                <div class="deepWrap">
-                <div class="deepBtn"><i class="fa-regular fa-heart"></i></div>
-                <p>찜하기</p>
+                <div class="deepWrap">`;
+                
+                if(likeInfo == "empty"){
+					detailHTML+=` <div class="deepBtn"><i class="fa-regular fa-heart" id="likeIcon-${movies.id}" onclick="toggleLike(${movies.id})"></i></div>`;
+				}else{
+					detailHTML+=` <div class="deepBtn"><i class="fa-solid fa-heart full_heart" id="likeIcon-${movies.id}" onclick="toggleLike(${movies.id})"></i></div>`;
+				}
+
+               detailHTML+= `<p>찜하기</p>
               </div>
                 <div id="detail-description">
                   <h5>작품정보</h5>

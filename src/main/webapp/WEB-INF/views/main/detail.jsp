@@ -20,31 +20,8 @@
 
       <div class="detail-container">
         <section id="detailWrap">
-          <div class="moiveImg">
-            <img
-              src="https://lumiere-a.akamaihd.net/v1/images/sa_pixar_virtualbg_coco_16x9_9ccd7110.jpeg?region=0,0,1920,1080&width=960"
-              alt=""
-            />
-            <div class="background"></div>
-          </div>
-          <div class="imgBottom">
-            <div class="titleWrap">
-              <h1 id="movie-title">영화제목</h1>
-              <p id="movie-year">영어제목,년도</p>
-              <p id="movie-v"><i class="fa-solid fa-star"></i>평점</p>
-              <div class="deepWrap">
-                <div class="deepBtn"><i class="fa-regular fa-heart"></i></div>
-                <p>찜하기</p>
-              </div>
-              <div id="detail-description">
-                <h5>작품정보</h5>
-                <p></p>
-              </div>
-            </div>
-            <div class="posterWrap">
-              <img src="" alt="" />
-            </div>
-          </div>
+         <input type="hidden" value="${like}" id="likeInfo"/>
+
         </section>
       </div>
 
@@ -56,5 +33,6 @@
       crossorigin="anonymous"
     ></script>
 <!-- 자바스크립트 -->
+
     <script src="/js/detail.js"></script>
 <%@ include file="../layout/footer.jsp"%>

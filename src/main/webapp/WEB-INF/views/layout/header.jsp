@@ -32,13 +32,13 @@
 	<input type="hidden"  id="principalId" value="${principal.user.id}"/>
 	
 	<header class="header">
-		<div class="container">
+		<div class="h-container">
 			<a href="/" class="logo">
 				<span> NOONING </span>
 			</a>
 			<nav class="navi">
 				<ul class="navi-list">
-					<li class="navi-item"><a href="/">
+					<li class="navi-item"><a href="/main/search">
 							<i class="fa fa-search" aria-hidden="true"></i>
 						</a></li>
 					<li class="navi-item"><a href="/user/${principal.user.id}">

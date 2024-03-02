@@ -18,8 +18,9 @@
    <section class="main-container">
 	<!-- start -->
 	
-	<section class="today-movie" style="font-size: 1.3em;">오늘의 영화</section>
+ <section class="today-movie" style="font-size: 1.3em;">오늘의 영화</section>
       <section class="popular-movie-view">
+       
         <!-- <div class="popular-movie">
           <img class="bbb" src="./images/back.jpg" alt="">
           <section class="text-contacts">
@@ -38,10 +39,18 @@
         -->
 
       </section>
+      <div class="paginationArrow">
+        <svg onclick="paginationRender()" xmlns="http://www.w3.org/2000/svg" style="color:darkgray;" width="2em" height="2em" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" style="color:darkgray;" width="2em" height="2em" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+      </div>
       <div class="category-title" style="font-size: 0.8em;">대한민국 TOP 10 콘텐츠</div>
       <section class="today-top-10-movie">
         <div class='top-10-side bbb'>
-          <div class="top-10-side-img bbbb">1</div>
+          <div class="top-10-side-img bbbb" >1</div>
           <img class="bbb bbbb" src="${imgUrl}${imgAddress}" alt="">
         </div>
         <section class="text-contacts">
@@ -126,16 +135,30 @@
         </div>
         
       </section>
+      <div class="paginationArrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+      </div>
       <div class="category-title" style="font-size: 0.8em"># 코미디</div>
       <section class="comedy-movie-view category-movie">
         
       </section>
+      <div class="paginationArrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+      </div>
       <div class="category-title" style="font-size: 0.8em"># 액션</div>
       <section class="action-movie-view category-movie">
        
       </section>
-      
-    <!-- end --> 
     </section>
 </main>
 

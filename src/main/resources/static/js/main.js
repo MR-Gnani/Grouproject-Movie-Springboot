@@ -23,14 +23,21 @@ let actionMovie = document.querySelector(".action-movie-view"); // 추가: 액�
 
 let todayMovieData = "";
 const todayMovieDataSize = 5;
+let todayMoviePageNum = 1;
+
 let popularMovieData = "";
 const popularMovieDataSize = 4;
+let popularMoviePageNum = 1;
+
 let horrorMovieData = "";
 const horrorMovieDataSize = 6;
+let horrorMoviePageNum = 1;
 let comedyMovieData = "";
 const comedyMovieDataSize = 6;
+let comedyMoviePageNum = 1;
 let actionMovieData = ""; // 추가: 액션 카테고리 데이터를 저장할 변수
 const actionMovieDataSize = 6; // 추가: 액션 카테고리 데이터 크기
+let actionMoviePageNum = 1;
 
 const top10URL =
   "https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=1";
@@ -62,7 +69,7 @@ const fetchPopularMovies = async () => {
   const popularMovieRender = (data) => {
     let movieDataList = "";
     const randomNumbers = [];
-    while (randomNumbers.length < 4) {
+    while (randomNumbers.length < 20) {
       const randomNumber = Math.floor(Math.random() * 100);
       if (
         !randomNumbers.includes(randomNumber) &&
@@ -81,8 +88,9 @@ const fetchPopularMovies = async () => {
       const imgAddress = data[targetNum].poster_path;
       const rateScore = data[targetNum].vote_average.toFixed(2);
       const titleName = data[targetNum].title;
+      const idName = data[targetNum].id;
 
-      movieDataList += ` <div class="popular-movie">
+      movieDataList += ` <div class="popular-movie" onclick="onclickMovieDetail(${idName})">
       <img class="bbb" src="${imgUrl}${imgAddress} alt="">
       <section class="text-contacts">
       <section class="text-title">${titleName}</section>
@@ -135,8 +143,9 @@ const render = (element, data, size) => {
       const imgAddress = data.results[i].poster_path;
       const rateScore = data.results[i].vote_average.toFixed(2);
       const titleName = data.results[i].title;
+      const idName = data.results[i].id;
 
-      movieDataList += ` <div class='top-10-side bbbb'>
+      movieDataList += ` <div class='top-10-side bbbb' onclick="onclickMovieDetail(${idName})">
       <div class="top-10-side-img">${i + 1}</div>
       <img class="bbb bbbb" src="${imgUrl}${imgAddress}" alt="">
       <section class="text-contacts">
@@ -152,8 +161,9 @@ const render = (element, data, size) => {
       const imgAddress = data.results[i].poster_path;
       const rateScore = data.results[i].vote_average.toFixed(2);
       const titleName = data.results[i].title;
+      const idName = data.results[i].id;
 
-      movieDataList += ` <div class="popular-movie">
+      movieDataList += ` <div class="popular-movie" onclick="onclickMovieDetail(${idName})">
       <img class="bbb" src="${imgUrl}${imgAddress} alt="">
       <section class="text-contacts">
       <section class="text-title">${titleName}</section>
@@ -167,8 +177,9 @@ const render = (element, data, size) => {
       const imgAddress = data.results[i].poster_path;
       const rateScore = data.results[i].vote_average.toFixed(2);
       const titleName = data.results[i].title;
+      const idName = data.results[i].id;
 
-      movieDataList += ` <div class="popular-movie">
+      movieDataList += ` <div class="popular-movie" onclick="onclickMovieDetail(${idName})">
       <img class="bbb" src="${imgUrl}${imgAddress} alt="">
       <section class="text-contacts">
       <section class="text-title">${titleName}</section>
@@ -178,4 +189,22 @@ const render = (element, data, size) => {
     }
   }
   element.innerHTML = movieDataList;
+};
+let nowPage = 0;
+const paginationRender = (category, dataName, pageSize, pageNum, direction) => {
+  categoryPageNum = direction;
+  if (categoryPageNum === right && categoryPageNum < 5) {
+    pageNum++;
+  } else if (categoryPageNum === left && categoryPageNum > 0) {
+    pageNum--;
+  }
+  if (categoryPageNum == 0) {
+    categoryPageNum = 5;
+  }
+  render(category, dataName, pageSize);
+};
+
+const onclickMovieDetail = (idName) => {
+  console.log(idName);
+  window.location.href = '/main/detail?movieId='+idName;
 };

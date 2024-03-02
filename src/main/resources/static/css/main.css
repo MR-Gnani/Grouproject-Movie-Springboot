@@ -35,7 +35,7 @@ body {
   display: flex;
   justify-content: space-between;
 
-  height: 270px;
+  height: 380px;
 }
 
 .popular-movie-view div {
@@ -57,7 +57,7 @@ body {
   display: flex;
   justify-content: space-between;
 
-  height: 150px;
+  height: 260px;
 }
 
 .category-movie div {
@@ -148,7 +148,7 @@ body {
 }
 
 .category-title {
-  margin-top: 6%;
+  margin-top: 1%;
   margin-bottom: 2%;
 }
 
@@ -157,7 +157,7 @@ body {
   position: relative;
   justify-content: space-between;
 
-  height: 170px;
+  height: 280px;
 }
 
 .today-top-10-movie div {
