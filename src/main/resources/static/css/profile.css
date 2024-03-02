@@ -1,7 +1,7 @@
 body {
   padding-top: 80px;
   margin-top: 1em;
-  background-color: rgb(31, 30, 37);
+  background-color: rgb(24, 24, 24);
 }
 
 a {
@@ -20,7 +20,7 @@ body h2 {
 
 /* middle */
 .user_information {
-  background-color: rgb(47, 47, 56);  
+  background-color: rgb(34, 34, 41);  
   margin: 0 30px;
   display: flex;
   justify-content: left;
@@ -48,6 +48,10 @@ body h2 {
 .category_list {
   display: flex;
   justify-content: left;
+}
+
+.category_list h2{
+	margin-bottom: 0.1em;
 }
 
 .category_list div{
@@ -147,3 +151,78 @@ body h2 {
     margin: 0 25px;
   }  
 }
+
+.like-List {
+	display: grid;
+	grid-gap: 10px;
+	margin: 1em;
+	height: 300px;
+}
+
+/* 작은 화면 크기일 때(1개씩) */
+@media screen and (max-width: 600px) {
+    .like-List {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* 중간 화면 크기일 때(2개씩) */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .like-List {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 큰 화면 크기일 때(3개씩) */
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+    .like-List {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 큰 화면 크기일 때(4개씩) */
+@media screen and (min-width: 1201px) {
+    .like-List {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.movie-box {
+	margin-top: 1em;
+	width: 100%;
+	height: 100%;
+	border: 1px solid lightgray;
+	overflow: hidden;
+}
+
+.movie-box .likeImg-box {
+	width: 100%;
+	height: 85%;
+}
+
+.movie-box .likeImg-box img{
+	width: 100%;
+	height: 100%;
+}
+
+.movie-box .likeHeart-box {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 45%;
+	margin-top: 1em;
+	color: white;
+	padding-left: 1em;
+}
+
+.movie-box .likeHeart-box .fa-solid {
+	color: red;
+}
+
+.movie-box .likeHeart-box i {
+	color: white;
+	margin-right: 1em;
+	cursor: pointer;
+}
+
+

@@ -4,7 +4,7 @@ let movies = [];
 let baseUrl = new URL(`https://api.themoviedb.org/3/movie`);
 let likeInfo = $('#likeInfo').val();
 
-console.log(likeInfo);
+
 /* (() => {
   const wrapEl = document.querySelector(".deepWrap");
   const FULL_HEART = '<i class="fa-solid fa-heart full_heart"></i>';
@@ -63,28 +63,8 @@ function toggleLike(movieId) {
 }
 
 const detailRender = async (movieId) => {
-  // console.log(movieId);
-  // window.location.href = "detail.html?id=" + movieId;
-
+ 
   try {
-    // const htmloptions = {
-    //   method: "GET",
-    //   header: {
-    //     accept: "text/html",
-    //   },
-    // };
-    // const html = "detail.html";
-    // const htmlResponse = await fetch(html, htmloptions);
-    // const htmlText = await htmlResponse.text();
-
-    // const parser = new DOMParser();
-    // const detailDoc = parser.parseFromString(htmlText, "text/html");
-
-    // const detailWrap = detailDoc.getElementById("detailWrap");
-    // if (!detailWrap) {
-    //   console.error("찾을 수 없습니다.");
-    //   return;
-    // }
 
     const options = {
       method: "GET",

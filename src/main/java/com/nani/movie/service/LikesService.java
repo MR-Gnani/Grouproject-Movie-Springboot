@@ -1,5 +1,7 @@
 package com.nani.movie.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -15,6 +17,9 @@ public class LikesService {
 
 	private final LikesRepository likesRepository;
 	
+	public List<Likes> likeMovieList(int userId) {
+		return likesRepository.myLikeList(userId);
+	}
 	
 	public Likes likeInfo(int userId , String movieId) {
 		return likesRepository.selectLikeInfo(userId, movieId);
