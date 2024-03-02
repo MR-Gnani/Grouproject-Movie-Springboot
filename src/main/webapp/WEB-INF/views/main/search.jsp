@@ -11,15 +11,19 @@
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 <link rel="stylesheet" href="/css/search.css" />
 <section class="header-padding">
-    <div>asdfasdfasdfsadf</div>
-    <div id="searcher">
+     <div id="searcher">
       <input
         id="search-input"
+        class="task-input"
         placeholder="영화제목 또는 키워드를 입력하세요"
+        type="text"
       />
-      <button onclick="getMoviesByKeyword()">SEARCH</button>
+      <button onclick="getMoviesByKeyword()">Go</button>
     </div>
     <section id="searched-list"></section>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination pagination-sm"></ul>
+    </nav>
  </section>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

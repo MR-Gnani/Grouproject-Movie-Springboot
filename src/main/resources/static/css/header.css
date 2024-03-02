@@ -1,10 +1,26 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+list-style: none;
+outline: none;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+a {
   text-decoration: none;
-  list-style: none;
-  outline: none;
+  color: #fff;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .header {
@@ -14,77 +30,91 @@
   position: fixed;
   top: 0;
   z-index: 10;
+  padding: 0 3em;
 }
 
-.header .h-container {
+.h-container {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
-  margin: 0 auto;
-  height: 100%;
 }
 
 .logo {
   display: flex;
   align-items: center;
   font-size: 32px;
-  font-weight: 700;
-  font-style: oblique;
+  font-weight: 900;
 }
 
-.logo span{
-	color: #e92047;
+.logo span {
+  color: #e92047;
 }
 
 .navi > .navi-list {
   display: flex;
+  margin-bottom: 0;
 }
+
 .navi > .navi-list .navi-item {
   flex: 1;
   text-align: center;
-  margin: 0 15px;
+  margin: 0 1em;
   display: flex;
 }
+
 .navi > .navi-list .navi-item a i {
-  font-size: 32px;
+  font-size: 24px;
   color: white;
   margin-top: 4px;
   cursor: pointer;
 }
 
-.modal-info {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-.modal-info .modal {
-  width: 400px;
-  background-color: #fff;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-}
-.modal-info .modal button {
-  border: 0;
-  background-color: transparent;
-  height: 48px;
-  cursor: pointer;
-}
 
-.modal-info .modal button:not(:last-child) {
-  border-bottom: 1px solid #dbdbdb;
-}
-
-
-@media screen and (max-width: 935px) {
-  .header .container {
-    width: 100%;
+@media screen and (max-width: 960px) {
+  .header {
+    padding: 0 1.5em;
   }
+  .logo {
+    font-size: 24px;
+  }
+  .navi > .navi-list .navi-item {
+    flex: 1;
+    text-align: center;
+    margin: 0 1em;
+    display: flex;
+  }
+
+  .navi > .navi-list .navi-item a i {
+    font-size: 20px;
+    color: white;
+    margin-top: 4px;
+    cursor: pointer;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 1em;
+    height: 50px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .navi > .navi-list .navi-item {
+    flex: 1;
+    text-align: center;
+    margin: 0 0.7em;
+    display: flex;
+  }
+
+  .navi > .navi-list .navi-item a i {
+    font-size: 16px;
+    color: white;
+    margin-top: 4px;
+    cursor: pointer;
+  }
+
 }

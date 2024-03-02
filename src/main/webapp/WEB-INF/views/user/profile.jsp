@@ -18,15 +18,10 @@
     <img src="/images/img7.jpg" alt="">    
     <div class="user_text">
       <div class="first_text">   
-        <div>
-          <input type="text" id="username">          
-        </div>     
-        <div>
-          <a href="/user/${principal.user.id}/update"> 회원정보 수정 </a>       
-        </div>
+          <input  class="info-text" type="text" id="username" value="${principal.user.username}">
+          <a href="/user/${principal.user.id}/update"> 회원정보 수정 </a>          
       </div>
       <div class="second_text">
-        <span>보유중인 Cash</span>
         <span>보유중인 Cash가 없습니다.</span>
       </div>
     </div>
