@@ -34,8 +34,22 @@ const getMovieData = async () => {
 
 getMovieData();
 
+$(document).ready(function() {
+  $("#search-button").on("click", getMoviesByKeyword);
+  $("#search-input").on("keypress", function(event) {
+    if (event.key === "Enter") {
+      getMoviesByKeyword();
+    }
+  });
+});
+
 const getMoviesByKeyword = async () => {
+
   const keyword = document.getElementById("search-input").value;
+    if (!keyword) {
+    return;
+  }
+  
   console.log("keyword", keyword);
   const url = new URL(
     `https://api.themoviedb.org/3/search/movie?language=ko-KR&query=${keyword}&api_key=${API_KEY}`
@@ -73,6 +87,10 @@ const render2 = () => {
   document.getElementById("searched-list").innerHTML = movieHTML.join("");
 };
 
+const onclickMovieDetail = (idName) => {
+  window.location.href = '/main/detail?movieId='+idName;
+};
+
 const render = () => {
   let imgUrl = "https://image.tmdb.org/t/p/w200";
   const movieHTML = searchedMoviesList.map(
@@ -81,36 +99,42 @@ const render = () => {
       <img
         class="img-size"
         src="${imgUrl}${searchedMoviesList[index * 4]?.poster_path}" alt=""
+        onclick="onclickMovieDetail(${searchedMoviesList[index * 4]?.id})"
       />
     </div>
     <div class="col-lg-2">
     <img
       class="img-size"
       src="${imgUrl}${searchedMoviesList[index * 4 + 1]?.poster_path}" alt=""
+      onclick="onclickMovieDetail(${searchedMoviesList[index * 4+1]?.id})"
     />
   </div>
   <div class="col-lg-2">
       <img
         class="img-size"
         src="${imgUrl}${searchedMoviesList[index * 4 + 2]?.poster_path}" alt=""
+         onclick="onclickMovieDetail(${searchedMoviesList[index * 4+2]?.id})"
       />
     </div>
     <div class="col-lg-2">
       <img
         class="img-size"
         src="${imgUrl}${searchedMoviesList[index * 4 + 3]?.poster_path}" alt=""
+         onclick="onclickMovieDetail(${searchedMoviesList[index * 4+3]?.id})"
       />
     </div>
     <div class="col-lg-2">
     <img
       class="img-size"
       src="${imgUrl}${searchedMoviesList[index * 4 + 4]?.poster_path}" alt=""
+       onclick="onclickMovieDetail(${searchedMoviesList[index * 4+4]?.id})"
     />
   </div>
   <div class="col-lg-2">
   <img
     class="img-size"
     src="${imgUrl}${searchedMoviesList[index * 4 + 5]?.poster_path}" alt=""
+     onclick="onclickMovieDetail(${searchedMoviesList[index * 4+5]?.id})"
   />
   </div>
   </div>`

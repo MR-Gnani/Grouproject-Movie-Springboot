@@ -57,11 +57,12 @@ const listRender = (data) => {
 
                     <div class="likeHeart-box">
                         <div class="date-section"> 2024.03.02 sat</div>
-                        <i class="fa-solid fa-heart full_heart"></i>
+                        <i class="fa-solid fa-heart full_heart"  id="likeIcon-${data.id}" onclick="toggleLike(${data.id})"></i>
                     </div>
 
                 </div>
         `;
+        
         likeList.append(listItem);
 }
 
@@ -73,6 +74,19 @@ const listRender = (data) => {
 };
 
 renderAllDetails();
+
+// 찜목록 해제
+function toggleLike(movieId) {
+		$.ajax({
+			type: "delete",
+			url: `/api/detail/${movieId}/likes`,
+			dataType: "json"
+		}).done(res=>{
+			location.reload();
+		}).fail(error=>{
+			console.log("오류", error);
+		});		
+}
 
 
 

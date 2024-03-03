@@ -15,7 +15,7 @@
   <!-- middle -->
   <section class="header-height"> 
   <div class="user_information">
-    <img src="/images/img7.jpg" alt="">    
+    <img src="/images/Nimage.jpeg" alt="">    
     <div class="user_text">
       <div class="first_text">   
           <input  class="info-text" type="text" id="username" value="${principal.user.username}">

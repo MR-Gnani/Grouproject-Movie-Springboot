@@ -8,18 +8,26 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 <link rel="stylesheet" href="/css/search.css" />
 <section class="header-padding">
      <div id="searcher">
-      <input
-        id="search-input"
-        class="task-input"
-        placeholder="영화제목 또는 키워드를 입력하세요"
-        type="text"
-      />
-      <button onclick="getMoviesByKeyword()">Go</button>
-    </div>
+        <input
+          id="search-input"
+          class="task-input"
+          placeholder="영화 제목 또는 키워드를 입력해보세요."
+          type="text"
+        />
+        <button id="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
     <section id="searched-list"></section>
     <nav aria-label="Page navigation example">
       <ul class="pagination pagination-sm"></ul>

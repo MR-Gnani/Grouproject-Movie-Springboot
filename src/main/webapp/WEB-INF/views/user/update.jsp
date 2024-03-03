@@ -16,7 +16,7 @@
                 <form id="profileUpdate" onsubmit="update(${principal.user.id}, event)">
 	               	 <!-- 프로필 이미지 -->
 	                <div class="imageWrap">
-	                   <img src="/images/comely.jpg"/>
+	                   <img src="/images/Nimage.jpeg"/>
 	                </div>
                     <div class="data-inputWrap">
                         <h4>아이디</h4>
